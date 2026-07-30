@@ -76,16 +76,16 @@ CLOAK combines a pretrained hand-landmark model with a custom-trained classifier
 └───────────────────────┬───────────────────────┘
                         ▼  (runs invisibly behind Layer 1)
 ┌─────────────────────────────────────────────┐
-│  Layer 2 — Detection Engine ⭐ Core Innovation │
-│  MediaPipe Hands → 21 landmarks               │
-│  RandomForestClassifier → signal / not-signal  │
-│  Hold-time check (~1.5s) → trigger event       │
-└───────────────────────┬───────────────────────┘
+│  Layer 2 — Detection Engine Core Innovation │
+│  MediaPipe Hands → 21 landmarks             │
+│  RandomForestClassifier → signal /not-signal│
+│  Hold-time check (~1.5s) → trigger event    │
+└───────────────────────┬─────────────────────┘
                         ▼
 ┌─────────────────────────────────────────────┐
-│  Layer 3 — Alert Log / Dashboard (hidden)      │
-│  Contact name, timestamp, location             │
-│  Demo-mode toggle for judges                   │
+│  Layer 3 — Alert Log / Dashboard (hidden)   │
+│  Contact name, timestamp, location          │
+│  Demo-mode toggle for judges                │
 └─────────────────────────────────────────────┘
 ```
 ---
@@ -96,7 +96,7 @@ A weather app — deliberately ordinary, plausible on any laptop screen, and unl
 
 ---
 
-## Layer 2 — Detection Engine ⭐ Core Innovation
+## Layer 2 — Detection Engine- Core Innovation
 
 The genuine two-stage ML pipeline, and the heart of the project:
 
@@ -135,13 +135,13 @@ On confirmed trigger, an alert is logged with contact name, timestamp, and locat
 
 | Feature | bSafe / SOS Apps | Life360 | **CLOAK** |
 |---|---|---|---|
-| Requires pressing a button | ✅ Yes | ❌ N/A | ❌ **No** |
-| Requires speaking | Sometimes | ❌ No | ❌ **No** |
-| Works when phone is inaccessible | ❌ No | ❌ No | ✅ **Yes** |
-| Passive / always-on detection | ❌ No | Partial (location only) | ✅ **Yes** |
-| Disguised interface | ❌ No | ❌ No | ✅ **Yes** |
-| Local-only processing | Varies | ❌ No (cloud-based) | ✅ **Yes** |
-| Routes to trusted contact first | Varies | ✅ Yes | ✅ **Yes** |
+| Requires pressing a button |  Yes |  N/A |  **No** |
+| Requires speaking | Sometimes |  No |  **No** |
+| Works when phone is inaccessible |  No |  No |  **Yes** |
+| Passive / always-on detection |  No | Partial (location only) |  **Yes** |
+| Disguised interface |  No |  No | **Yes** |
+| Local-only processing | Varies |  No (cloud-based) |  **Yes** |
+| Routes to trusted contact first | Varies |  Yes |  **Yes** |
 
 ---
 
