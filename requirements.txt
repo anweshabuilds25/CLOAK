@@ -3,7 +3,6 @@ opencv-python-headless
 mediapipe==0.10.14
 scikit-learn
 pandas
-numpy
 streamlit-webrtc
+protobuf<5,>=4.25.3
 streamlit-autorefresh
-av
