@@ -34,7 +34,7 @@ Existing personal-safety apps like bSafe, Life360, generic SOS apps, all require
 
 ## Real World Incident
 
-In August 2025, a domestic violence victim at a convenience store in Alhambra, California was accompanied by her alleged abuser and unable to speak freely about her situation, so she asked for help using hand signals behind her back, which store staff and police later confirmed was a deliberate call for assistance without alerting her abuser. The Alhambra Police Department credited the recognized "Signal for Help" gesture with allowing the incident to be identified and addressed safely. This is exactly the scenario CLOAK is built for: a victim in the physical presence of their abuser, unable to speak or reach for a phone, relying on a small, deliberately inconspicuous gesture to get help. CLOAK asks a simple question — if one observant bystander recognizing this signal can save a life, what happens when a camera is trained to recognize it automatically, every time, without needing a bystander to be paying attention at exactly the right moment?
+In August 2025, a domestic violence victim at a convenience store in Alhambra, California was accompanied by her alleged abuser and unable to speak freely about her situation, so she asked for help using hand signals behind her back, which store staff and police later confirmed was a deliberate call for assistance without alerting her abuser. The Alhambra Police Department credited the recognized "Signal for Help" gesture with allowing the incident to be identified and addressed safely. This is exactly the scenario CLOAK is built for: a victim in the physical presence of their abuser, unable to speak or reach for a phone, relying on a small, deliberately inconspicuous gesture to get help. CLOAK asks a simple question ,if one observant bystander recognizing this signal can save a life, what happens when a camera is trained to recognize it automatically, every time, without needing a bystander to be paying attention at exactly the right moment?
 
 ---
 
@@ -43,7 +43,7 @@ In August 2025, a domestic violence victim at a convenience store in Alhambra, C
 | Existing Approach | Failure Point |
 |---|---|
 | SOS button apps (bSafe, etc.) | Requires visibly reaching for and unlocking a phone |
-| Voice-trigger apps | Requires speaking — impossible if the threat is present and listening |
+| Voice-trigger apps | Requires speaking : impossible if the threat is present and listening |
 | Location-sharing apps (Life360) | Passive tracking only, no active distress signal |
 | Wearable panic buttons | Requires a separate device, plus a deliberate physical action that can be seen |
 
@@ -106,7 +106,7 @@ The genuine two-stage ML pipeline, and the heart of the project:
 
 **Hold-time confirmation:** the signal must be detected continuously for ~1.5 seconds before triggering — this eliminates false positives from a single stray frame.
 
-> *"We use a pretrained model, MediaPipe Hands, to extract hand geometry from every frame — that's real, off-the-shelf deep learning. On top of that, we trained our own classifier on data we collected ourselves to recognize this specific signal. It's a genuine two-stage ML pipeline: transfer learning at the feature-extraction layer, custom supervised learning at the decision layer."*
+> *"We use a pretrained model, MediaPipe Hands, to extract hand geometry from every frame  that's real, off-the-shelf deep learning. On top of that, we trained our own classifier on data we collected ourselves to recognize this specific signal. It's a genuine two-stage ML pipeline: transfer learning at the feature-extraction layer, custom supervised learning at the decision layer."*
 
 ---
 
