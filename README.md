@@ -214,6 +214,19 @@ streamlit run app.py
 **Live deployed version:** *[add your Streamlit Community Cloud URL here once deployed]*
 
 ---
+## Screenshots
+
+### Login Screen
+![Login Screen](assets/login.png)
+
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Decoy Website
+![Decoy](assets/decoy.png)
+
+### Emergency Mode
+![Emergency](assets/emergency.png)
 
 ## References
 
