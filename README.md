@@ -211,9 +211,10 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-**Live deployed version:** *[add your Streamlit Community Cloud URL here once deployed]*
+**Live deployed version:** *
 
 ---
+## Screenshots
 ## Screenshots
 
 ### Login Screen
@@ -223,7 +224,7 @@ streamlit run app.py
 ![Dashboard](assets/dashboard.png)
 
 ### Decoy Website
-![Decoy](assets/decoy.png)
+![Decoy Website](assets/decoy.png)
 
 ### Emergency Mode
 ![Emergency](assets/emergency.png)
