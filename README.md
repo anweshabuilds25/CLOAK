@@ -241,7 +241,7 @@ then your README should use:
 
 
 
-### Dashboard
+### normal 
 ![Dashboard](assets/image.png)
 
 ### Emergency Mode
