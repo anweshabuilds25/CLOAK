@@ -67,10 +67,10 @@ CLOAK combines a pretrained hand-landmark model with a custom-trained classifier
 
 ```
 ┌─────────────────────────────────────────────┐
-│              Webcam Input (Live)             │
-└───────────────────────┬───────────────────────┘
+│              Webcam Input (Live)            │
+└───────────────────────┬─────────────────────┘
                         ▼
-┌─────────────────────────────────────────────┐
+┌───────────────────────────────────────────────┐
 │   Layer 1 — Decoy UI (visible by default)     │
 │   Weather Widget — disguise                   │
 └───────────────────────┬───────────────────────┘
