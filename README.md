@@ -238,9 +238,7 @@ assets/
 then your README should use:
 
 ## Screenshots
-### Login Screen
 
-![Login Screen](assets/login.jpg)
 
 
 ### Dashboard
