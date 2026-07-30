@@ -6,3 +6,4 @@ pandas
 streamlit-webrtc
 protobuf<5,>=4.25.3
 streamlit-autorefresh
+numpy<2
