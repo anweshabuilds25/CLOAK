@@ -1,6 +1,7 @@
 import cv2
 import mediapipe as mp
 import time
+from collections import deque
 from classifier import predict
 
 mp_hands = mp.solutions.hands
@@ -9,7 +10,11 @@ hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 
 cap = cv2.VideoCapture(0)
 
-HOLD_TIME_REQUIRED = 1.5  # seconds
+HOLD_TIME_REQUIRED = 0.8       # lowered for reliable demo firing
+BUFFER_SIZE = 10               # number of recent frames to consider
+SIGNAL_RATIO_REQUIRED = 0.6    # 60% of recent frames must be "signal" to count
+
+recent_predictions = deque(maxlen=BUFFER_SIZE)
 signal_start_time = None
 triggered = False
 
@@ -34,8 +39,13 @@ while True:
             landmarks.extend([lm.x, lm.y, lm.z])
 
         pred = predict(landmarks)
+        recent_predictions.append(pred)
 
-        if pred == 1:
+        # Majority vote over the recent window, instead of a single frame
+        signal_ratio = sum(recent_predictions) / len(recent_predictions)
+        is_signal_now = signal_ratio >= SIGNAL_RATIO_REQUIRED
+
+        if is_signal_now:
             if signal_start_time is None:
                 signal_start_time = time.time()
             elapsed = time.time() - signal_start_time
@@ -50,9 +60,10 @@ while True:
         else:
             signal_start_time = None
             triggered = False
-            label_text = "Normal"
+            label_text = f"Normal (signal ratio: {signal_ratio:.2f})"
             color = (0, 255, 0)
     else:
+        recent_predictions.clear()
         signal_start_time = None
         triggered = False
 

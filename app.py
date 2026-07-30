@@ -19,6 +19,7 @@ TRUSTED_CONTACTS = ["Mom", "Dad", "Priya (Friend)"]
 COOLDOWN_SECONDS = 15  # prevent spamming repeat alerts
 
 mp_hands = mp.solutions.hands
+mp_draw = mp.solutions.drawing_utils
 
 
 class SignalProcessor:
@@ -34,6 +35,10 @@ class SignalProcessor:
 
         if result.multi_hand_landmarks:
             hand_landmarks = result.multi_hand_landmarks[0]
+
+            # Draw landmarks on the frame so demo mode can show them
+            mp_draw.draw_landmarks(img, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
             landmarks = []
             for lm in hand_landmarks.landmark:
                 landmarks.extend([lm.x, lm.y, lm.z])
@@ -45,6 +50,11 @@ class SignalProcessor:
                 elapsed = time.time() - self.signal_start_time
                 if elapsed >= 1.5:
                     self.triggered = True
+                    cv2.putText(img, "SIGNAL DETECTED", (10, 30),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+                else:
+                    cv2.putText(img, f"Holding... {elapsed:.1f}s", (10, 30),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 165, 255), 2)
             else:
                 self.signal_start_time = None
                 self.triggered = False
@@ -55,7 +65,12 @@ class SignalProcessor:
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 
-# ---- Hidden webcam processor (camera runs, feed is not shown) ----
+# ---- Demo mode toggle (moved up so we know its value before hiding/showing video) ----
+st.divider()
+with st.expander("⚙️ App Settings"):
+    demo_mode = st.checkbox("Demo Mode (show detection dashboard)", value=False)
+
+# ---- Webcam processor ----
 ctx = webrtc_streamer(
     key="cloak-detector",
     mode=WebRtcMode.SENDRECV,
@@ -67,20 +82,23 @@ ctx = webrtc_streamer(
     desired_playing_state=True,
 )
 
-# Hide the video element visually (still runs in background)
-st.markdown("""
-    <style>
-    iframe {
-        height: 0px !important;
-        min-height: 0px !important;
-        max-height: 0px !important;
-        border: none !important;
-        visibility: hidden !important;
-        position: absolute !important;
-        pointer-events: none !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# ---- Hide video feed UNLESS demo mode is on ----
+if not demo_mode:
+    st.markdown("""
+        <style>
+        iframe {
+            height: 0px !important;
+            min-height: 0px !important;
+            max-height: 0px !important;
+            border: none !important;
+            visibility: hidden !important;
+            position: absolute !important;
+            pointer-events: none !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+else:
+    st.info("🔍 Demo Mode: live detection feed visible below (hidden in real deployment)")
 
 # ---- Poll every second for trigger state ----
 st_autorefresh(interval=1000, key="poll")
@@ -117,11 +135,7 @@ for col, day, temp, icon in zip(cols, days, temps, icons):
         st.write(icon)
         st.write(temp)
 
-# ---- Demo mode toggle (for judges only — tucked at the bottom) ----
-st.divider()
-with st.expander("⚙️ App Settings"):
-    demo_mode = st.checkbox("Demo Mode (show detection dashboard)", value=False)
-
+# ---- Alert Log (only shown in demo mode) ----
 if demo_mode:
     st.divider()
     st.subheader("🚨 Alert Log (Demo View)")
