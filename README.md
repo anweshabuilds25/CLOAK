@@ -180,7 +180,7 @@ On confirmed trigger, an alert is logged with contact name, timestamp, and locat
 
 📹 **Demo Video (no audio):** [Watch here](https://youtu.be/7uQ6oy3L1zs)
 
-> *Note: This recording shows the actual deployed CLOAK application running live on Streamlit Cloud. It was recorded as a backup in case the live deployment link becomes temporarily unavailable during judging (a known limitation of free-tier cloud hosting under sustained load). The application is fully functional and can also be run locally — see [Installation](#installation) above.*
+> *Note: This recording shows the actual deployed CLOAK application running live on Streamlit Cloud. It was recorded as a backup in case the live deployment link becomes temporarily unavailable during judging (a known limitation of free-tier cloud hosting under sustained load). The application is fully functional and can also be run locally — see [Installation](#installation) below.*
 
 ---
 
