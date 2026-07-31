@@ -170,13 +170,17 @@ On confirmed trigger, an alert is logged with contact name, timestamp, and locat
 
 ## Demo Walkthrough
 
+## Demo Walkthrough
+
 1. Open on the decoy screen (weather app), nothing unusual visible.
 2. Switch to demo mode: dashboard shows live camera feed, status = "monitoring."
 3. Flash the Signal for Help gesture — hold for ~1.5s.
 4. Alert fires: status flips, simulated alert log entry appears with contact, timestamp, location.
 5. Show a normal hand wave immediately after — **no trigger fires**, proving this isn't a hair-trigger gimmick.
 
-> *[Once recorded, add a link or embedded GIF/video of an actual demo run here.]*
+📹 **Demo Video (no audio):** [Watch here](https://youtu.be/7uQ6oy3L1zs)
+
+> *Note: This recording shows the actual deployed CLOAK application running live on Streamlit Cloud. It was recorded as a backup in case the live deployment link becomes temporarily unavailable during judging (a known limitation of free-tier cloud hosting under sustained load). The application is fully functional and can also be run locally — see [Installation](#installation) above.*
 
 ---
 
@@ -211,7 +215,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-**Live deployed version:** *
+**Live deployed version:** https://hurd7uinrzrxbp9xekbzm8.streamlit.app/
 
 ---
 Nope! You do NOT have to rename them. Renaming is just for neatness.
