@@ -6,6 +6,9 @@
 
 *Passive silent-distress detection, hidden behind an ordinary screen.*
 
+**Team Binary Bandits**
+Anwesha Dhote (25BAI10996) · Niharika Nimish Shrigiriwar (25BCE10339)
+
 </div>
 
 ---
