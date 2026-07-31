@@ -216,6 +216,7 @@ streamlit run app.py
 ```
 
 **Live deployed version:** https://hurd7uinrzrxbp9xekbzm8.streamlit.app/
+> *Note: The deployed version runs on Streamlit Cloud's free tier, which has known resource and WebRTC connection-stability limitations under sustained live video inference — the app may occasionally need a reboot from our side to stay responsive. For guaranteed reliability, please see the demo video above (recorded on the actual deployed app) or run the app locally using the setup instructions below — both give the full, unaffected experience.*
 
 ---
 
