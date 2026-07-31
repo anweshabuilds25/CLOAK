@@ -218,28 +218,6 @@ streamlit run app.py
 **Live deployed version:** https://hurd7uinrzrxbp9xekbzm8.streamlit.app/
 
 ---
-Nope! You do NOT have to rename them. Renaming is just for neatness.
-
-If you're okay with filenames like:
-
-login.jpg
-emergency.png
-image.png
-
-that's completely fine.
-
-The only rule is:
-
-The filename in the README must exactly match the filename in the assets folder.
-
-For example, if your folder is:
-
-assets/
-├── login.jpg
-├── image.png
-├── emergency.png
-
-then your README should use:
 
 ## Screenshots
 
