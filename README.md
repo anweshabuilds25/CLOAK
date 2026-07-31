@@ -255,6 +255,7 @@ then your README should use:
 ## References
 
 - [Signal for Help — Canadian Women's Foundation](https://canadianwomen.org/signal-for-help/)
-- [MediaPipe Hands — Google AI Edge](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
+- [MediaPipe Hand Landmarker — Google AI Edge](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
 - [scikit-learn RandomForestClassifier documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 - [Streamlit documentation](https://docs.streamlit.io/)
+- [Women Safety Division — Ministry of Home Affairs, Government of India](https://www.mha.gov.in/en/divisionofmha/women-safety-division)
